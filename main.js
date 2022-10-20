@@ -26,7 +26,7 @@ function myFun(){
     let val = search_inpt.value;
     if(search_inpt.value != ""){
 
-        fetch(`http://api.weatherapi.com/v1/forecast.json?q=${val}&key=7606b22ddf334cdba8f231335221810&days=7`)
+        fetch(`https://api.weatherapi.com/v1/forecast.json?q=${val}&key=7606b22ddf334cdba8f231335221810&days=7`)
 
         .then((response)=>{
             if(response.status == 400){

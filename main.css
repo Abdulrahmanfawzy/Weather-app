@@ -175,6 +175,12 @@ body{
     .container .div_left{
         width: 100%;
     }
+    .image_cloud #img_county{
+        height: 375px;
+    }
+    .div_left .search_div{
+        margin-bottom: 10px;
+    }
 }
 
 @media(max-width: 576px){
