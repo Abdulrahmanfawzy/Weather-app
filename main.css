@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #F3F3F3;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.container .div_left{
+    width: 30%;
+    background: #323131;
+    color: #FFF;
+    text-align: center;
+    /* height: 100vh; */
+}
+.div_left .search_div{
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.search_div input{
+    padding: 10px;
+    outline: 0;
+    border-top-left-radius: 10px;
+    color: #000;
+    border: none;
+    width: 55%;
+}
+.search_div a{
+    background: linear-gradient(to bottom right , #21AB9D , #6D73B5);
+    display: inline-block;
+    padding: 8px 10px;
+    color: #FFF;
+    text-decoration: none;
+    line-height: 20px;
+}
+.div_left h2{
+    font-size: 2.5rem;
+}
+.div_left .clouds{
+    color: #999;
+}
+.div_left .image_cloud img{
+    width: 100%;
+}
+.image_cloud{
+    position: relative;
+}
+.image_cloud .overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.image_cloud .cityname{
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    align-items: center;
+}
+.div_left .info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.cityname h1{
+    display: inline-block;
+    margin-right: 10px;
+}
+.cityname span{
+    font-size: 1.2rem;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.image_cloud #img_county{
+    height: 715px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+.div_right{
+    width: 70%;
+    padding: 0px 30px;
+}
+.div_right .title{
+    margin-top: 50px;
+    color: #7D99B9;
+    letter-spacing: 1.7px;
+    margin-bottom: 50px;
+}
+
+.div_right .big_box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.big_box .box{
+    width: 32%;
+    background: #FFF;
+    border-radius: 10px;
+    padding: 20px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.box h2{
+    margin-bottom: 15px;
+}
+.box img{
+    width: 60px;
+    margin-bottom: 10px;
+}
+.box .percent{
+    color: #86888b;
+    font-size: 1.5rem;
+}
+
+.week_flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.big_week h2{
+    margin: 20px 0px;
+    color: #7D99B9;
+    letter-spacing: 1.7px;
+}
+.week_day_box{
+    background: #FFF;
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+.week_day_box{
+    width: 32%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.day_icon{
+    margin-bottom : 7px;
+}
+.day_tmp,.day_desc{
+    margin-bottom : 7px;
+}
+
+.day_marg{
+    margin-top: 10px;
+}
+
+@media(max-width: 991px){
+    .container{
+        flex-wrap: wrap;
+    }
+    .div_right{
+        width: 100%;
+        padding: 0px 20px;
+    }
+    .big_box .box{
+        width: 48%;
+    }
+    .container .div_left{
+        width: 100%;
+    }
+}
+
+@media(max-width: 576px){
+    .week_day_box{
+        width: 49%;
+    }
+    .big_box .box{
+        width: 100%;
+    }
+}
+@media(max-width: 350px){
+    .week_day_box{
+        width: 100%;
+    }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="div_left">
+            <div class="search_div">
+                <input type="text" placeholder="type city here..." id="search_inpt">
+                <a href="#" id="btn">Search</a>
+            </div>
+
+            <h2 class="h2_day">_</h2>
+            <div class="info">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="clouds">
+                    __ __ __
+                </div>
+            </div>
+            <div class="image_cloud">
+                <div class="overlay"></div>
+                <img id="img_county" src="pic/white-cloud-blue-sky.jpg" alt="">
+                <div class="cityname">
+                    <h1>_ _</h1><span class="country"></span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="div_right">
+            <div class="title">
+                <h2>
+                    Today's highlights
+                </h2>
+            </div>
+            <div class="big_box">
+                <div class="box">
+                    <h2>
+                        Humidity
+                    </h2>
+                    <div class="img">
+                        <img src="pic/humidity.png" alt="">
+                    </div>
+                    <div class="humidity_percent">_%</div>
+                </div>
+
+                <div class="box">
+                    <h2>
+                        Pressure
+                    </h2>
+                    <div class="img">
+                        <img src="pic/barometer.png" alt="">
+                    </div>
+                    <div class="Pressure_percent">_ k/h</div>
+                </div>
+
+                <div class="box">
+                    <h2>
+                        Tempreture
+                    </h2>
+                    <div class="img">
+                        <img src="pic/temperature.png" alt="">
+                    </div>
+                    <div class="Tempreture_percent">_°C</div>
+                </div>
+
+                <div class="box">
+                    <h2>
+                        Cloud coverage
+                    </h2>
+                    <div class="img">
+                        <img src="pic/cloud-computing.png" alt="">
+                    </div>
+                    <div class="Cloud_percent">_</div>
+                </div>
+                <div class="box">
+                    <h2>
+                        Wind Speed
+                    </h2>
+                    <div class="img">
+                        <img src="pic/wind.png" alt="">
+                    </div>
+                    <div class="Wind_percent">_ km/h</div>
+                </div>
+                <div class="box">
+                    <h2>
+                        Sunrise
+                    </h2>
+                    <div class="img">
+                        <img src="pic/hot-weather.png" alt="">
+                    </div>
+                    <div class="Sun_percent">_</div>
+                </div>
+            </div>
+
+            <div class="big_week">
+                <h2>Timeline week</h2>
+                <div class="week_flex">
+                    <div class="week_day_box">
+                        <div>_</div>
+                        <div class="day_icon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="day_tmp">_</div>
+                        <div class="day_desc">_</div>
+                    </div>
+                    <div class="week_day_box">
+                        <div>_</div>
+                        <div class="day_icon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="day_tmp">_</div>
+                        <div class="day_desc">_</div>
+                    </div>
+                    <div class="week_day_box">
+                        <div>_</div>
+                        <div class="day_icon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="day_tmp">_</div>
+                        <div class="day_desc">_</div>
+                    </div>
+                    <div class="week_day_box">
+                        <div>_</div>
+                        <div class="day_icon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="day_tmp">_</div>
+                        <div class="day_desc">_</div>
+                    </div>
+                    <div class="week_day_box">
+                        <div>_</div>
+                        <div class="day_icon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="day_tmp">_</div>
+                        <div class="day_desc">_</div>
+                    </div>
+                    <div class="week_day_box">
+                        <div>_</div>
+                        <div class="day_icon">
+                            <img src="" alt="">
+                        </div>
+                        <div class="day_tmp">_</div>
+                        <div class="day_desc">_</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+</body>
+</html>
