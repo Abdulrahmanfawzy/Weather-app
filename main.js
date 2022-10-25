@@ -57,12 +57,9 @@ function myFun(){
             img_county.src = `https://source.unsplash.com/600x550/?${country}`;
 
             (function testsasd(){
-                if(day_title > 6){
-                    day_title = 0;
-                    h2_day.innerHTML = weekday[day_title];
-                }else{
-                    h2_day.innerHTML = weekday[day_title];
-                }
+                let y = data.forecast.forecastday[0].date;
+                let x = new Date(y).getDay();
+                h2_day.innerHTML = weekday[x];
             })();
 
             image.src = `https:${data.forecast.forecastday[0].day.condition.icon}`;
