@@ -16,8 +16,8 @@ let week_flex = document.querySelector(".week_flex");
 let max_temp_div = document.querySelector(".max_temp_div");
 let min_temp_div = document.querySelector(".min_temp_div");
 let weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-let x = new Date();
-let y = x.getDay();
+let gettingDay = new Date();
+let day_title = gettingDay.getDay();
 
 
 btn.addEventListener("click" , myFun);
@@ -44,6 +44,7 @@ function myFun(){
             }
         }
         ).then((data)=>{
+            console.log(data);
             let {text} = data.forecast.forecastday[0].day.condition;
             let {humidity} = data.current;
             let {pressure_mb} = data.current;
@@ -54,19 +55,21 @@ function myFun(){
             let {mintemp_c} = data.forecast.forecastday[0].day;
 
             img_county.src = `https://source.unsplash.com/600x550/?${country}`;
-            if(y > 6){
-                y = 0;
-                h2_day.innerHTML = weekday[y];
-            }else{
-                h2_day.innerHTML = weekday[y];
-            }
+
+            (function testsasd(){
+                if(day_title > 6){
+                    day_title = 0;
+                    h2_day.innerHTML = weekday[day_title];
+                }else{
+                    h2_day.innerHTML = weekday[day_title];
+                }
+            })();
 
             image.src = `https:${data.forecast.forecastday[0].day.condition.icon}`;
             cityname.innerHTML = name;
             cityname_span.innerHTML = "("+country+")";
             humidity_percent.innerHTML = humidity + "%";
             Pressure_percent.innerHTML = pressure_mb + " k/h";
-            // Tempreture_percent.innerHTML = temp_c + "°C"
             clouds.innerHTML = text;
             Wind_percent.innerHTML = wind_kph + " km/h";
             Cloud_percent.innerHTML = data.current.cloud + "%";
@@ -77,17 +80,15 @@ function myFun(){
             // ------------------------------
             week_flex.innerHTML = "";
 
-            function tests() {
-                y++;
-                if(y > 6){
-                    y = 0;
-                    return weekday[y];
-                }else{
-                    return weekday[y];
-                }
-            }
+
             for(let i = 1; i < weekday.length; i++){
                 
+                function tests() {
+                    let y = data.forecast.forecastday[i].date;
+                    let x = new Date(y).getDay();
+                    return weekday[x];
+                }
+
                 let box = `
                 <div class="week_day_box">
                     <div class="day_marg">${tests()}</div>

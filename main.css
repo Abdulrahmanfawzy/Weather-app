@@ -199,6 +199,16 @@ body{
     .week_day_box{
         width: 100%;
     }
+    .big_week h2{
+        letter-spacing: 1px;
+        font-size: 20px;
+    }
+}
+@media(max-width: 270px){
+    .day_tmp {
+        flex-direction: column;
+        grid-row-gap: 10px;
+    }
 }
 
 .Tempreture_percent{
@@ -224,4 +234,9 @@ body{
 .max_temp_div b,
 .min_temp_div b{
     color: #21AB9D;
+}
+
+.day_marg{
+    font-weight: 600;
+    font-size: 18px;
 }
