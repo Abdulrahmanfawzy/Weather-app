@@ -13,6 +13,8 @@ let Wind_percent = document.querySelector(".Wind_percent");
 let Sun_percent = document.querySelector(".Sun_percent");
 let image = document.querySelector(".image img");
 let week_flex = document.querySelector(".week_flex");
+let max_temp_div = document.querySelector(".max_temp_div");
+let min_temp_div = document.querySelector(".min_temp_div");
 let weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 let x = new Date();
 let y = x.getDay();
@@ -42,14 +44,14 @@ function myFun(){
             }
         }
         ).then((data)=>{
-            console.log(data);
-            let {text} = data.current.condition;
+            let {text} = data.forecast.forecastday[0].day.condition;
             let {humidity} = data.current;
             let {pressure_mb} = data.current;
-            let {temp_c} = data.current;
             let {wind_kph} = data.current;
             let {name} = data.location;
             let {country} = data.location;
+            let {maxtemp_c} = data.forecast.forecastday[0].day;
+            let {mintemp_c} = data.forecast.forecastday[0].day;
 
             img_county.src = `https://source.unsplash.com/600x550/?${country}`;
             if(y > 6){
@@ -59,24 +61,25 @@ function myFun(){
                 h2_day.innerHTML = weekday[y];
             }
 
-            image.src = `https:${data.current.condition.icon}`;
+            image.src = `https:${data.forecast.forecastday[0].day.condition.icon}`;
             cityname.innerHTML = name;
             cityname_span.innerHTML = "("+country+")";
             humidity_percent.innerHTML = humidity + "%";
             Pressure_percent.innerHTML = pressure_mb + " k/h";
-            Tempreture_percent.innerHTML = temp_c + "°C"
+            // Tempreture_percent.innerHTML = temp_c + "°C"
             clouds.innerHTML = text;
             Wind_percent.innerHTML = wind_kph + " km/h";
             Cloud_percent.innerHTML = data.current.cloud + "%";
             Sun_percent.innerHTML = data.forecast.forecastday[0].astro.sunrise;
-
+            max_temp_div.innerHTML = `Max: <b>${maxtemp_c}°C</b> `
+            min_temp_div.innerHTML = `Min: <b>${mintemp_c}°C</b> `
 
             // ------------------------------
             week_flex.innerHTML = "";
 
             function tests() {
                 y++;
-                if(y == 6){
+                if(y > 6){
                     y = 0;
                     return weekday[y];
                 }else{
@@ -91,13 +94,23 @@ function myFun(){
                     <div class="day_icon">
                         <img src="https:${data.forecast.forecastday[i].day.condition.icon}" alt="">
                     </div>
-                    <div class="day_tmp">${data.forecast.forecastday[i].day.mintemp_c}°C</div>
                     <div class="day_desc">${data.forecast.forecastday[i].day.condition.text}</div>
+                    <div class="day_tmp">
+                        <div class="tmp_two">Min: <b>${data.forecast.forecastday[i].day.mintemp_c}°C</b></div>
+                        <div class="tmp_one">Max: <b>${data.forecast.forecastday[i].day.maxtemp_c}°C</b></div>
+                    </div>
                 </div>
                 `;
                 week_flex.innerHTML += box;
             }
             
         })
+    }else{
+        Swal.fire({
+            title: 'You have to write any city name',
+            icon: 'error',
+            iconHtml: '!',
+            cancelButtonText: 'Cancel',
+          })
     }
 }

@@ -144,6 +144,7 @@ body{
     background: #FFF;
     border-radius: 10px;
     padding: 10px 0px;
+    font-size: 16px;
 }
 .week_day_box{
     width: 32%;
@@ -170,7 +171,7 @@ body{
         padding: 0px 20px;
     }
     .big_box .box{
-        width: 48%;
+        width: 49%;
     }
     .container .div_left{
         width: 100%;
@@ -179,7 +180,10 @@ body{
         height: 375px;
     }
     .div_left .search_div{
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    .div_left .info{
+        margin-bottom: 20px;
     }
 }
 
@@ -195,4 +199,29 @@ body{
     .week_day_box{
         width: 100%;
     }
+}
+
+.Tempreture_percent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+.day_tmp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 15px auto;
+}
+.day_tmp b{
+    color: #21AB9D;
+}
+.day_desc{
+    margin: 10px 0px 20px;
+}
+.max_temp_div b,
+.min_temp_div b{
+    color: #21AB9D;
 }
